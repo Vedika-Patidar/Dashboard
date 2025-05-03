@@ -3,29 +3,24 @@ import { FiSearch, FiMoreHorizontal } from "react-icons/fi";
 import { BsDot, BsPlus, BsPlusCircle } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
 
-
 const ChatSidebar = () => {
+  const getAvatar = (file) =>
+    new URL(`/src/assets/avatars/${file}`, import.meta.url).href;
 
-    const getAvatar = (file) =>
-      new URL(`/src/assets/avatars/${file}`, import.meta.url).href;
-
-
-    const users = [
-      { name: "Ina Perry", status: "Online", avatar: "avatar1.png" },
-      { name: "Wesley Ray", status: "Online", avatar: "avatar2.png" },
-      { name: "Eula Burton", status: "Work", avatar: "avatar3.png" },
-      { name: "Viola Morales", status: "Offline", avatar: "avatar4.png" },
-      { name: "Vincent Terry", status: "Online", avatar: "avatar5.png" },
-      { name: "Neil Burns", status: "Offline", avatar: "avatar6.png" },
-      { name: "Lydia Sutton", status: "Online", avatar: "avatar7.png" },
-      { name: "Cynthia Evans", status: "Offline", avatar: "avatar8.png" },
-    ];
-
+  const users = [
+    { name: "Ina Perry", status: "Online", avatar: "avatar1.png" },
+    { name: "Wesley Ray", status: "Online", avatar: "avatar2.png" },
+    { name: "Eula Burton", status: "Work", avatar: "avatar3.png" },
+    { name: "Viola Morales", status: "Offline", avatar: "avatar4.png" },
+    { name: "Vincent Terry", status: "Online", avatar: "avatar5.png" },
+    { name: "Neil Burns", status: "Offline", avatar: "avatar6.png" },
+    { name: "Lydia Sutton", status: "Online", avatar: "avatar7.png" },
+    { name: "Cynthia Evans", status: "Offline", avatar: "avatar8.png" },
+  ];
 
   return (
     <div className="pt-8">
-      <div className="hidden md:block w-72 bg-white p-4 text-[#7D8FB3] text-[13px] ">
-        {/* Search Bar */}
+      <div className="hidden md:block w-72 bg-white p-4 text-[#7D8FB3] text-[13px] border-b">
         <div className="flex items-center space-x-4 border-b border-gray-200 rounded-lg px-3 py-4 mb-4">
           <FiSearch className="text-gray-400" size={16} />
           <input
@@ -36,7 +31,6 @@ const ChatSidebar = () => {
           <FaArrowRight size={16} className="text-gray-400" />
         </div>
 
-        {/* Direct Messages */}
         <div className="mb-4">
           <div className="flex justify-between items-center mb-2">
             <span className="text-[13px] text-[#7D8FB3] font-bold">
@@ -45,38 +39,34 @@ const ChatSidebar = () => {
             <BsPlusCircle size={22} className="text-gray-400" />
           </div>
 
-          {/* Users */}
           {users.map(({ name, status, avatar }, index) => (
             <div key={index} className="flex justify-between items-center py-2">
               <div className="flex items-center space-x-3">
-                {/* Avatar */}
                 <img
                   src={getAvatar(avatar)}
                   alt={name}
                   className="w-6 h-6 rounded-full object-cover"
                 />
-
-                {/* Name + Status */}
                 <div className="flex items-center space-x-16">
                   <div className="text-[13px] font-semibold text-[#2E3A59]">
                     {name}
                   </div>
-                  <div
-                    className={`text-[13px] font-bold ${
-                      status === "Online"
-                        ? "text-green-500"
-                        : status === "Work"
-                        ? "text-yellow-500"
-                        : "text-gray-400"
-                    }`}
-                  >
-                    {status}
-                  </div>
                 </div>
               </div>
-
-              {/* Time */}
-              <span className="text-[12px] text-gray-400">12:45</span>
+              <div className="flex gap-4">
+                <div
+                  className={`text-[13px] font-bold ${
+                    status === "Online"
+                      ? "text-green-500"
+                      : status === "Work"
+                      ? "text-yellow-500"
+                      : "text-gray-400"
+                  }`}
+                >
+                  {status}
+                </div>
+                <span className="text-[12px] text-gray-400">12:45</span>
+              </div>
             </div>
           ))}
 
@@ -85,7 +75,6 @@ const ChatSidebar = () => {
           </button>
         </div>
 
-        {/* Channels */}
         <div className="mb-4">
           <div className="flex justify-between items-center mb-2">
             <span className="text-[14px] text-[##7D8FB3] font-semibold">
@@ -120,7 +109,6 @@ const ChatSidebar = () => {
           </button>
         </div>
 
-        {/* Project Companies */}
         <div>
           <div className="flex justify-between items-center mb-2">
             <span className="text-[14px] text-[##7D8FB3] font-semibold">

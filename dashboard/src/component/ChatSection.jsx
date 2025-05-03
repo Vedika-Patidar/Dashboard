@@ -1,12 +1,11 @@
-"use client";
-
 import { useState } from "react";
-import { CiImageOn, CiVideoOn } from "react-icons/ci";
+import { CiImageOn } from "react-icons/ci";
 import { FaHeart, FaPhoneAlt } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
 import { MdApps, MdOutlineAttachment } from "react-icons/md";
 import { AiFillFlag, AiOutlineEllipsis } from "react-icons/ai";
 import { IoSendSharp } from "react-icons/io5";
+import { IoMdVideocam } from "react-icons/io";
+import { LuMaximize2 } from "react-icons/lu";
 
 export default function ChatSection() {
   const [message, setMessage] = useState("");
@@ -16,24 +15,21 @@ export default function ChatSection() {
       <div className="bg-white">
         <div className="flex items-center justify-between px-4 py-4 border-b pt-9 ">
           <div className="flex items-center space-x-4">
-            <button className="text-gray-500">
-              <FaPhoneAlt className="h-5 w-5" />
-            </button>
-            <button className="text-gray-500">
-              <CiVideoOn className="h-5 w-5" />
-            </button>
+            <FaPhoneAlt className="text-[#C3CAD9]" size={20} />
+
+            <IoMdVideocam size={24} className=" text-[#C3CAD9]" />
           </div>
 
           <div className="flex items-center space-x-2">
             <div className="h-2 w-2 rounded-full bg-green-500" />
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-semibold text-[#7D8FB3]">
               Dennis Smith
             </span>
           </div>
 
           <div className="flex items-center space-x-4 text-gray-400">
-            <FiExternalLink className="h-5 w-5" />
-            <MdApps className="h-5 w-5" />
+            <LuMaximize2 className="text-[#C3CAD9]" size={24} />
+            <MdApps className=" text-[#C3CAD9]" size={24} />
           </div>
         </div>
       </div>
