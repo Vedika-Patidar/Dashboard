@@ -27,12 +27,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="hidden md:flex flex-col justify-between items-center h-auto w-32 py-4 bg-gray-50 gap-6">
-      <div className="space-y-10">
+    <div className="hidden md:flex flex-col justify-between items-center h-auto w-24 py-4 bg-gray-50 gap-8">
+      <div className="space-y-5">
         {topIcons.map((item, idx) => (
           <div
             key={idx}
-            className={`p-3 rounded-full bg-white flex items-center justify-center transition-all text-xl ${
+            className={`p-3 rounded-full bg-white flex items-center justify-center transition-all text-lg ${
               item.active
                 ? "bg-blue-100 text-blue-600"
                 : "text-gray-400 hover:bg-gray-200"
@@ -43,7 +43,7 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className="space-y-10">
+      <div className="space-y-5">
         {users.map((user, idx) => (
           <div key={idx} className="relative">
             <img

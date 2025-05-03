@@ -23,8 +23,8 @@ const ChatSidebar = () => {
 
 
   return (
-    <div className="pt-8">
-      <div className="hidden md:block w-72 bg-white p-4 text-[#7D8FB3] text-[13px] ">
+    <div className="">
+      <div className="hidden md:block w-72 bg-white p-4 text-[#7D8FB3] text-[13px]">
         {/* Search Bar */}
         <div className="flex items-center space-x-4 border-b border-gray-200 rounded-lg px-3 py-4 mb-4">
           <FiSearch className="text-gray-400" size={16} />
